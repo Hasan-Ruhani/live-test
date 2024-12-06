@@ -12,10 +12,11 @@ h6 {
 }
 
 .product-card {
+  background-color: #eef0e4;
   margin-bottom: 16px;
   padding: 16px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
 }
@@ -27,10 +28,11 @@ h6 {
 }
 
 .order-summary {
+  background-color: #eef0e4;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-top: 20px;
+  border-radius: 12px;
+  /* margin-top: 20px; */
 }
 
 .order-summary h4,
@@ -42,6 +44,7 @@ h6 {
   background-color: #4caf50;
   border-color: #4caf50;
   color: white;
+  margin-top: 127px;
 }
 
 .header {

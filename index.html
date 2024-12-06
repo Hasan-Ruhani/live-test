@@ -29,9 +29,12 @@
               src="https://www.kroger.com/product/images/large/front/0000000003423?banner=harristeeter"
               alt="Heirloom Tomato"
             />
-            <div>
+            <div class="col-md-8">
               <h4>Heirloom Tomato</h4>
               <p>$5.99 / kg</p>
+            </div>
+            <div class="col-2 text-end">
+              <p class="mb-0 fw-bold">$5.99</p>
             </div>
           </div>
           <div class="product-card">
@@ -39,9 +42,12 @@
               src="https://desikhazana.co.uk/cdn/shop/products/Organic_Ginger.jpg?v=1579808088"
               alt="Organic Ginger"
             />
-            <div>
+            <div class="col-md-8">
               <h4>Organic Ginger</h4>
               <p>$12.99 / kg</p>
+            </div>
+            <div class="col-2 text-end">
+              <p class="mb-0 fw-bold">$6.50</p>
             </div>
           </div>
           <div class="product-card">
@@ -49,19 +55,35 @@
               src="https://zestkh.com/wp-content/uploads/2023/12/Red-White-or-Sweet-How-Do-I-Choose-the-Right-Onion-Secondary-k8-0_fkPHulv-M-unsplash-1024x682.jpg"
               alt="Sweet Onion"
             />
-            <div>
+            <div class="col-md-8">
               <h4>Sweet Onion</h4>
               <p>$2.99 / kg</p>
+            </div>
+            <div class="col-2 text-end">
+              <p class="mb-0 fw-bold">$14.95</p>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="order-summary">
             <h4>Order Summary</h4>
-            <p>Subtotal: $27.44</p>
-            <p>Shipping: $3.99</p>
-            <p>Tax: $2.00</p>
-            <p>Total: $33.43</p>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Subtotal</p>
+              <p class="mb-2">$27.44</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Shipping</p>
+              <p class="mb-2">$3.99</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p class="mb-2">Tax</p>
+              <p class="mb-2">$2.00</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-2">Total</h5>
+              <p class="mb-2">$33.43</p>
+            </div>
+
             <button class="btn btn-green btn-lg w-100">
               Continue to payment →
             </button>
@@ -69,7 +91,5 @@
         </div>
       </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
