@@ -25,6 +25,55 @@ from .forms import PostForm
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
+from django.db.models import Q
+
+
+
+
+class ProfileSearchView(ListView):
+    model = Profile
+    template_name = 'search_results.html'  # Search results page
+    context_object_name = 'profiles'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q', '').strip()
+        if query:
+            # Get exact match first
+            exact_match = Profile.objects.filter(user__username__iexact=query)
+
+            # Get similar matches (excluding exact match)
+            similar_matches = Profile.objects.filter(
+                Q(user__username__icontains=query) & ~Q(user__username__iexact=query)
+            )
+
+            # Use `.union()` instead of converting to a list
+            return exact_match.union(similar_matches)
+
+        return Profile.objects.none()  # If empty query, return no results
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['query'] = self.request.GET.get('q', '')  # Keep query for display
+        return context
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -38,10 +87,6 @@ class home(ListView):
         queryset = list(Post.objects.all())
         random.shuffle(queryset)
         return queryset
-
-from django.shortcuts import get_object_or_404
-from django.views.generic import DetailView
-from .models import Profile, Post
 
 class ProfileDetailView(DetailView):
     model = Profile

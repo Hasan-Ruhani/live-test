@@ -34,10 +34,19 @@
      <!-- Navbar -->
      <nav class="bg-gray-800 p-3 flex justify-between items-center fixed w-full top-0 z-50">
         <!-- Left Section: Logo and Search -->
-        <a href="{% url 'home' %}" class="flex items-center space-x-4">
-            <img src="{% static "img/facebook_logo.png" %}" alt="Facebook" class="w-10 h-10">
-            <input type="text" placeholder="Search Facebook" class="bg-gray-700 px-3 py-2 rounded-lg text-white text-sm focus:outline-none">
-        </a>
+         <div class="flex items-center space-x-4">
+            <a href="{% url 'home' %}">
+                <img src="{% static "img/facebook_logo.png" %}" alt="Facebook" class="w-10 h-10">
+            </a>
+            <form method="GET" action="{% url 'profile_search' %}">
+                <input type="text" name="q" placeholder="Search Facebook" required 
+                       class="bg-gray-700 px-3 py-2 rounded-lg text-white text-sm focus:outline-none">
+            </form>
+            
+        </div>
+
+            
+        
         
         <!-- Center Section: Icons -->
         <div class="flex gap-[50px] text-gray-400 mr-[140px]">
