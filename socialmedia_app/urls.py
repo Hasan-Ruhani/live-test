@@ -2,12 +2,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from django.contrib.auth.views import LogoutView
-from .views import home, RegisterView, CustomLoginView, ProfileDetailView, ProfileUpdateView, ProfilePostCreateView, ProfilePostUpdateView, DeletePost
+from .views import home, RegisterView, CustomLoginView, ProfileDetailView, ProfileUpdateView, ProfilePostCreateView, ProfilePostUpdateView, DeletePost, ProfileSearchView
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
 
-
+    path('search/', ProfileSearchView.as_view(), name='profile_search'),
     
 
     path('', home.as_view(), name='home'),
